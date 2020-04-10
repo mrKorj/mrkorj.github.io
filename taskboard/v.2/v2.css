@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main {
+    display: flex;
+    background: linear-gradient(135deg, #ffffff, #74b9ff);
+}
+
+.left-bar {
+    width: 27vw;
+    min-height: 100vh;
+}
+
+.left-bar a {
+    display: flex;
+    margin-top: 25px;
+    margin-left: 70px;
+}
+
+.left-bar a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    display: inline;
+    /*text-align: center;*/
+}
+
+.logo h2 {
+    color: #42A5F5;
+    font-size: 36px;
+    font-weight: bold;
+    margin-left: 70px;
+}
+
+.input-field {
+    width: 270px;
+}
+
+.input-field input[type]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #74b9ff !important;
+}
+
+.input-field input[type]:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #74b9ff !important;
+    box-shadow: 0 1px 0 0 #74b9ff !important;
+}
+
+.input-field input[type]:not([readonly]),
+.input-field input[type]:focus:not([readonly]) {
+    border-bottom: 1px solid black;
+}
+
+.input-field .prefix.active{
+    color: #74b9ff !important;
+}
+
+.my-center {
+    margin-left: 70px;
+}
+
+.btn {
+    margin-top: 6px;
+    margin-right: 10px;
+}
+
+
+
+/*------------ card----------------*/
+
+.boardContent {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    width: 73vw;
+}
+
+.card-rotate {
+    width: 200px;
+    height: 300px;
+    cursor: pointer;
+    transform: translate(25%, 10%);
+    margin-right: 50px;
+    margin-bottom: 40px;
+}
+
+.card-rotate:hover .front {
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.card-rotate:hover .back {
+    transform: perspective(600px) rotateY(0);
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform .5s ease;
+    border-radius: 10px;
+    background: linear-gradient(#fff, #d6d6d6);
+
+}
+
+.front {
+    transform: perspective(600px) rotateY(0);
+    overflow: hidden;
+    background-image: url("../img/task.jpeg");
+}
+
+.front-cower {
+    background-color: rgba(0, 0, 0, .7);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.front-cower span {
+    font-size: 24px;
+    color: white;
+}
+
+.date-time {
+    color: #dc3545;
+    font-weight: 600;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.date-time p {
+    font-size: 12px;
+    color: white;
+}
+
+.back {
+    transform: perspective(600px) rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.description {
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 6px;
+    padding: 3px;
+    overflow-y: auto;
+    width: 190px;
+    height: 180px;
+}
+
+.description::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.description::-webkit-scrollbar {
+    width: 3px;
+}
+
+.description::-webkit-scrollbar-thumb {
+    background-color: #74b9ff;
+}
+
+.add-date {
+    color: #007bff;
+    font-size: 12px;
+}
+
+.delete-section {
+    position: absolute;
+    bottom: 5px;
+    left: 82px;
+}
+
+.delete-section a {
+    color: #444;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    border-radius: 50%;
+    transition: .4s ease;
+}
+
+.delete-section a:hover {
+    background-color: #444;
+    color: #fff;
+}

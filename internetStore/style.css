@@ -1,0 +1,662 @@
+/* --------------- reset.css --------------- */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, fieldset,
+form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header,
+hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0; /* обнуляем отступы и убираем бордюры */
+    vertical-align: baseline; /* приводим все к одной базовой линии */
+    background: white; /* чтобы не проскакивали левые фоны, установленные по умолчанию */
+    font-size: 100%; /* размер шрифта всем одинаковый */
+}
+
+a { /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    outline: none;
+}
+
+table { /* устраняем отступы между ячейками таблицы */
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td, td img {
+    vertical-align: top; /* возвращаем привычное вертикальное выравнивание */
+}
+
+input, select, button, textarea {
+    margin: 0; /* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
+    font-size: 100%; /* делаем размер шрифтов везде одинаковым */
+    outline: none;
+}
+
+input[type="text"], input[type="password"], textarea {
+    padding: 0; /* убираем внутренние отступы для текстовых полей */
+}
+
+input[type="checkbox"] { /* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
+    vertical-align: bottom;
+}
+
+input[type="radio"] {
+    vertical-align: text-bottom;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+}
+
+/* --------------- /reset.css --------------- */
+
+/* --------------- базовые настройки ---------*/
+html {
+    min-height: 100%; /* всегда показываем вертикальную полосу прокрутки  */
+}
+
+body {
+    color: #7e7f84;
+    text-align: left;
+    font-size: 1em; /* используем безопасные шрифтовые CSS стеки */
+    min-height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+a, a:visited { /* порядок правил для ссылок имеет значение */
+    color: #f45a40;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #f45a40;
+    text-decoration: none;
+}
+
+a:focus, a:active {
+    color: #f45a40;
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+img {
+
+    max-width: 100%;
+}
+
+.clr {
+    clear: both;
+}
+
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+/* --------------- /базовые настройки ---------*/
+
+.center-block-main {
+    margin: 0 auto;
+    max-width: 1170px;
+}
+
+.header-top {
+    padding: 30px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    float: left;
+    font-size: 1.35em;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.contact-basket {
+    float: right;
+}
+
+.contact-basket p {
+    float: left;
+    font-size: 0.75em;
+    font-weight: bold;
+}
+
+.contact-basket p img {
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+.header-basket {
+    border: 1px solid #eee;
+    padding: 7px 25px;
+    margin-left: 25px;
+}
+
+.header-basket a {
+    text-transform: uppercase;
+    color: #7e7f84;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.header-basket a:hover {
+    color: #f45a40;
+}
+
+.header-phone {
+    padding-top: 7px;
+}
+
+/*---------------------------------------------- HEADER BOTTOM--------------------------------------------------*/
+
+.header-bottom {
+    padding: 10px 0;
+}
+
+.menu {
+    float: left;
+}
+
+.menu li {
+    float: left;
+    margin-right: 25px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #7e7f84;
+    font-size: 0.87em;
+}
+
+.menu li a:hover {
+    color: #f45a40;
+}
+
+.search-block {
+    float: left;
+    padding-left: 20px;
+}
+
+.search-btn {
+    float: left;
+    margin: 3px 5px 0 0;
+}
+
+.search {
+    float: left;
+    font-size: 0.87em;
+    color: #7e7f84;
+    border: none;
+}
+
+/*-----------------------------------SLIDER-----------------------------------*/
+.banner {
+    position: relative;
+    overflow: auto;
+}
+
+.banner li {
+    list-style: none;
+}
+
+.banner ul li {
+    float: left;
+    position: relative;
+    color: #f45a40
+}
+
+.banner ul li h2 {
+    position: absolute;
+    top: 220px;
+    left: 25px;
+    font-size: 3.55em;
+    font-weight: bold;
+    line-height: 1.1
+}
+
+.banner ul li p {
+    position: absolute;
+    top: 350px;
+    left: 25px;
+    font-size: 0.87em;
+}
+
+.unslider-nav {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+/*-------------------------------------------------------maine-Block--------------------------------*/
+
+.mine-block {
+    margin-top: 30px;
+}
+
+.mine-block article {
+    width: 31.6%;
+    float: left;
+    margin-left: 2.6%;
+}
+
+.mine-block article:first-child {
+    margin-left: 0;
+}
+
+.mine-block article img {
+    display: block;
+    margin: 0 auto;
+}
+
+.mine-block article h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.375em;
+    margin-bottom: 20px;
+}
+
+.mine-block article p {
+    font-size: 0.87em;
+}
+
+/*---------------------------------------------popular products--------------------------------------*/
+.popular-products {
+    margin-bottom: 60px;
+}
+
+.popular-products > h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.415em;
+    color: #67686d;
+    text-align: center;
+    margin: 50px auto 30px auto;
+}
+
+.popular-main article {
+    width: 23.05%;
+    float: left;
+    margin-left: 2.56%;
+}
+
+.popular-main article:first-child {
+    margin-left: 0;
+}
+
+.popular-main article img {
+    display: block;
+    margin: 0 auto;
+}
+
+.popular-content {
+    padding: 20px 20px 0 20px;
+    border: 1px solid #eee;
+    border-top: none;
+}
+
+.popular-content h2 {
+    font-size: 1.125em;
+    margin-bottom: 5px;
+    color: #67686d;
+    text-transform: uppercase;
+}
+
+.popular-content h3 {
+    font-size: 0.875em;
+    margin-bottom: 5px;
+    color: #67686d;
+    text-transform: uppercase;
+}
+
+.popular-content p {
+    font-size: 0.625em;
+    margin-bottom: 20px;
+}
+
+.prise-basket {
+    border-top: 1px solid #eee;
+}
+
+.prise {
+    float: left;
+    color: #f45a40;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.basket-btn {
+    float: right;
+    margin-top: 20px;
+}
+
+/*-----------------------------------ABOUT-------------------------------*/
+.about {
+    margin-bottom: 60px;
+}
+
+.about article {
+    float: left;
+    width: 55.55%;
+}
+
+.about article h2 {
+    font-size: 1.44em;
+    color: #67686d;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.about article p {
+    font-size: 0.875em;
+    color: #7e7f84;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.map {
+    float: right;
+    width: 34.2%;
+    margin-top: 50px;
+    display: block;
+}
+
+.mapin {
+    position: relative;
+    padding-bottom: 75%; /*  300/400 размер карты */
+    height: 0;
+    overflow: hidden;
+}
+
+.mapin iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/*----------------------------------Subscribe form------------------------------------------*/
+.subscribe {
+    background: #f45a40;
+    color: #f45a40;
+    padding: 30px 0;
+}
+
+.subscribe h2 {
+    float: left;
+    font-size: 1.325em;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.subscribe form {
+    float: right;
+    border: 1px solid #ccc;
+}
+
+.email-inp {
+    text-transform: uppercase;
+    border: none;
+    font-size: 0.875em;
+    float: left;
+    width: 200px;
+    padding: 7px 20px;
+}
+
+.submit-inp {
+    background: #ff674f;
+    float: left;
+    font-size: 0.875em;
+    text-transform: uppercase;
+    width: 100px;
+    padding: 7px 15px;
+    border: none;
+    color: white;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+/*------------------------------Footer---------------------------------------*/
+.ftr {
+    background: #2a2d34;
+    padding: 40px 0;
+}
+
+.ftr h2 {
+    font-size: 1.325em;
+    /*color: white;*/
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-bottom: 10px;
+}
+
+.ftr p {
+    font-size: 0.875em;
+    margin-bottom: 20px;
+}
+
+.ftr h3 {
+    font-size: 0.875em;
+    margin-bottom: 5px;
+}
+
+.ftr h3 a {
+    /*color: white;*/
+    text-decoration: none;
+}
+
+.ftr h3 a:hover {
+    text-decoration: underline;
+}
+
+.support {
+    float: left;
+    width: 47%;
+    margin-right: 3%;
+}
+
+.support a {
+    display: block;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: #7e7f84;
+}
+
+.support a:hover {
+    text-decoration: underline;
+}
+
+.footer-email-inp {
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    margin-bottom: 15px;
+    padding: 7px 20px;
+    box-sizing: border-box;
+    /*border: none;*/
+}
+
+.footer-textarea {
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    margin-bottom: 15px;
+    padding: 7px 20px;
+    box-sizing: border-box;
+    /*border: none;*/
+}
+
+.footer-submit-inp {
+    background: #f45a40;
+    font-size: 0.875em;
+    text-transform: uppercase;
+    width: 140px;
+    padding: 7px 15px;
+    border: none;
+    /*color: white;*/
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .banner ul li h2 {
+        top: 150px;
+        left: 25px;
+        font-size: 3em;
+    }
+
+    .banner ul li p {
+        top: 260px;
+    }
+
+    .popular-main article {
+        width: 45%;
+        margin: 0 2.5% 30px 2.5%;
+    }
+
+    .popular-main article:first-child {
+        margin: 0 2.5% 30px 2.5%;
+    }
+
+    .subscribe h2 {
+        float: none;
+        text-align: center;
+        margin: 0 0 20px 0;
+    }
+
+    .subscribe form {
+        float: none;
+        display: table;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .banner ul li h2 {
+        top: 50px;
+        left: 25px;
+        font-size: 2.5em;
+    }
+
+    .banner ul li p {
+        top: 140px;
+    }
+
+    .search-block {
+        margin: 5px 0 0 0;
+        padding: 5px 10px;
+        border: 1px solid #eee;
+        float: right;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .banner ul li h2 {
+        font-size: 2em;
+    }
+
+    .mine-block article {
+        width: 95%;
+        float: none;
+        margin: 0 2.5% 30px 2.5%;
+    }
+
+    .mine-block article:first-child {
+        margin: 0 2.5% 30px 2.5%;
+    }
+
+    .about article {
+        float: none;
+        width: 95%;
+        margin: 0 2.5% 30px 2.5%;
+    }
+
+    .map {
+        float: none;
+        margin: 0 2.5% 30px 2.5%;
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .banner ul li h2 {
+        top: 50px;
+        left: 25px;
+        font-size: 1.5em;
+    }
+
+    .banner ul li p {
+        top: 110px;
+    }
+
+    .popular-main article {
+        width: 95%;
+        float: none;
+        margin: 0 2.5% 30px 2.5%;
+        overflow: hidden;
+    }
+
+    .popular-main article:first-child {
+        width: 95%;
+        float: none;
+        margin: 0 2.5% 30px 2.5%;
+    }
+}
+
+@media screen and (max-width: 412px) {
+    .header-top {
+        padding: 10px 0;
+    }
+
+    .logo {
+        float: none;
+        text-align: center;
+    }
+
+    .contact-basket {
+        float: none;
+        display: table;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    .email-inp {
+        float: none;
+        width: 95%;
+        margin: 0 2.5% 20px 2.5%;
+        box-sizing: border-box;
+    }
+
+    .submit-inp {
+        margin: 0 2.5% 20px 2.5%;
+    }
+
+    .banner ul li h2 {
+        top: 30px;
+        font-size: 1em;
+    }
+
+    .banner ul li p {
+        top: 90px;
+    }
+}

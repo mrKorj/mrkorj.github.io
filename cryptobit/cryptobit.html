@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://kit.fontawesome.com/5efbb9eed2.js" crossorigin="anonymous"></script>
+    <title>CryptoBit</title>
+</head>
+<body>
+<div class="container-lg">
+    <div class="head d-flex justify-content-between align-items-center m-2">
+        <div>
+            <div class="d-flex">
+                <div class="logo d-flex justify-content-center">
+                    <a href="https://mrkorj.github.io/" class="logo-link"><img src="img/logo.png" alt="Logo"></a>
+                </div>
+                <div>
+                    <a href="https://mrkorj.github.io/" class="logo-text">
+                        <h2 class="text-secondary custom-text text-uppercase ml-1">Crypto&#8383;it</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="social d-flex justify-content-between">
+            <a class="m-2" href="https://linkedin.com/in/sergy-kremenchugsky-31644b159" target="_blank"><i
+                    class="fab fa-linkedin-in"></i></a>
+            <a class="m-2" href="https://github.com/mrKorj/mrkorj.github.io.git" target="_blank"><i
+                    class="fab fa-github"></i></a>
+            <a class="m-2" href="mailto:mr.korj@gmail.com"><i class="fas fa-at"></i></a>
+        </div>
+    </div>
+    <nav class="navbar navbar-light bg-light border">
+        <div class="nav nav-tabs font-weight-bold" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home" data-toggle="tab" href="#homeTab" role="tab"
+               aria-controls="nav-home" aria-selected="true">Coins List</a>
+            <a class="nav-item nav-link" id="top-coins" data-toggle="tab" href="#top" role="tab"
+               aria-controls="nav-top" aria-selected="false">Popular Coins</a>
+            <a class="nav-item nav-link" id="nav-reports" data-toggle="tab" href="#reports" role="tab"
+               aria-controls="nav-reports" aria-selected="false">Live Chart</a>
+
+            <a class="nav-item nav-link" id="nav-about" data-toggle="tab" href="#about" role="tab"
+               aria-controls="nav-about" aria-selected="false">About</a>
+
+            <a class="nav-item nav-link text-success" id="nav-search-res" data-toggle="tab" href="#search-res"
+               role="tab"
+               aria-controls="nav-search-res" aria-selected="false">Search Results</a>
+        </div>
+        <div class="searchForm">
+            <form id="search-form" class="form-inline ">
+                <a id="resetSelected" href="#" role="button" class="btn btn-sm btn-outline-primary my-2 my-sm-0 mr-2">Reset
+                    Selected</a>
+                <input name="search" class="form-control mr-sm-2 custom-class" type="search"
+                       placeholder="Search by Symbol"
+                       aria-label="Search"
+                       required>
+                <button class="customBtn btn btn-success my-2 my-sm-0" type="submit"><i
+                        class="fas fa-search"></i>
+                </button>
+
+            </form>
+        </div>
+    </nav>
+
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="homeTab" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="d-flex justify-content-center align-items-baseline">
+                <div>
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center mt-3">
+                            <li class="navStatusPrevBtn page-item disabled">
+                                <a class="prev page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">Prev</span>
+                                </a>
+                            </li>
+                            <li class="page-item disabled"><a class="pageNumber page-link" href="#">1</a></li>
+                            <li class="navStatusNextBtn page-item">
+                                <a class="next page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="pagination ml-2">
+                    <label class="mr-sm-2 sr-only ml-1" for="select">cards on page</label>
+                    <select class="custom-select mr-sm-2" id="select">
+                        <option selected>20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="home" class="d-flex flex-wrap justify-content-center overflow-auto"></div>
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center mt-3">
+                    <li class="navStatusPrevBtn page-item disabled">
+                        <a class="prev page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">Prev</span>
+                        </a>
+                    </li>
+                    <li class="page-item disabled"><a class="pageNumber page-link" href="#">1</a></li>
+                    <li class="navStatusNextBtn page-item">
+                        <a class="next page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="tab-pane fade" id="reports" role="tabpanel" aria-labelledby="nav-reports-tab">
+            <div class="d-flex justify-content-between align-items-center">
+                <div id="notSupported" class="mt-2"></div>
+                <div class=" ml-5 mt-2 align-items-center">
+                    <label class="interval-label" for="select">Update Interval:
+                        <select class="" id="interval">
+                            <option selected>3 sec</option>
+                            <option value="5">5 sec</option>
+                            <option value="10">10 sec</option>
+                            <option value="20">20 sec</option>
+                            <option value="30">30 sec</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div id="chartContainer"></div>
+            <div class="description">
+                <p class="text-center font-weight-bold"><span class="text-danger text-uppercase">warning.</span> If some
+                    coin is not displayed in the chart,
+                    this coin is not supported by the <a href="https://www.cryptocompare.com/" target="_blank">Crypto Compare</a>
+                    service.</p>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="top" role="tabpanel" aria-labelledby="nav-top-tab">
+            <div class="text-center m-3"><h3 class="text-secondary">Top most Popular & Expensive CryptoCurrency</h3>
+            </div>
+            <div id="topContent" class="d-flex flex-wrap justify-content-center "></div>
+        </div>
+
+        <div class="tab-pane fade text-secondary" id="about" role="tabpanel" aria-labelledby="nav-about-tab">
+            <div class="text-center m-4">
+                <h5>CryptoBit, this is a training project. Not for Public use. All rights
+                    reserved by the developer.</h5>
+                <h5>Kremenchugsky Sergy <i class="far fa-copyright"></i></h5>
+
+                <div class="social-about text-secondary m-4">
+                    <span>All Data Provided by:</span>
+                    <a class="m-2 text-decoration-none" href="https://www.coingecko.com/"
+                       target="_blank">CoinGecko.com</a>
+                    <a class="m-2 text-decoration-none" href="https://www.cryptocompare.com/"
+                       target="_blank">CryptoCompare.com</a>
+                </div>
+
+                <div class="social-about text-secondary m-4">
+                    <span>Contacts:</span>
+                    <a class="m-2 text-decoration-none" href="https://linkedin.com/in/sergy-kremenchugsky-31644b159"
+                       target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                    <a class="m-2 text-decoration-none" href="https://github.com/mrKorj/mrkorj.github.io.git"
+                       target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a class="m-2 text-decoration-none" href="mailto:mr.korj@gmail.com"><i class="fas fa-at"></i> Email</a>
+                </div>
+            </div>
+            <div id="" class="d-flex flex-wrap justify-content-center "></div>
+        </div>
+
+        <div class="tab-pane fade" id="search-res" role="tabpanel" aria-labelledby="nav-search-tab">
+            <div class="search-section d-flex justify-content-between">
+                <div id="numFound" class="text-secondary"></div>
+                <div>
+                    <button id="clear" class="btn btn-sm btn-outline-primary m-2">Clear search</button>
+                </div>
+            </div>
+            <div class="searchRes d-flex flex-wrap"></div>
+        </div>
+    </div>
+    <hr>
+</div>
+
+<!--modal-->
+<div class="modal fade" id="modal" data-backdrop="static" tabindex="-1" role="dialog"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-danger" id="staticBackdropLabel">Maximum 5 cards, uncheck some card.</h4>
+            </div>
+            <div id="modalContent" class="modal-body d-flex flex-wrap justify-content-center"></div>
+            <div class="modal-footer">
+                <button id="save-modal" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                <button id="chart-modal" type="button" class="btn btn-success">Show in Chart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<script src="js/chart.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
